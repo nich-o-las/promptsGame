@@ -10,7 +10,7 @@
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
     "seed": "node scripts/seedDB.js",
     "client": "cd client && npm run start",
-    "build": "cd client && npm run build"
+    "build": "cd client && npm install && npm run build"
   },
   "author": "",
   "license": "ISC",
