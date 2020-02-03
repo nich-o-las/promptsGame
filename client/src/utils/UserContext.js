@@ -27,6 +27,7 @@ export default function UserProvider(props) {
     } else {
       localStorage.setItem('thingsAuthToken', token);
       // i'm setting the userId in it's own setter bc then I can save it in localStorage
+      console.log(userId)
       changeUserId(userId);
       setIsAuthenticated(true);
       setToken(token);
