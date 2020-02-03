@@ -65,7 +65,7 @@ export default function UserProvider(props) {
   useEffect(() => {
     console.log("TOKEN: ", userId, token);
     if(userId && token) getUser(token, userId); 
-  },[]);
+  },[token]);
 
   useEffect(() => {
     //updates the user in the db
