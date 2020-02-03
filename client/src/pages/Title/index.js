@@ -10,7 +10,7 @@ import Logo from "../../components/Logo";
 
 export default function Title() {
 
-    const {userName, userWins, userAvatar, changeAvatar, isAuthenticated, changeAuthenticated, getUser} = useContext(UserContext);
+    const {userName, userAvatar, changeAvatar, isAuthenticated, changeAuthenticated} = useContext(UserContext);
     const [loginModal, setLoginModal] = useState({ 
         isOpen: false,
         playerClass: "loginModal closed"
@@ -47,12 +47,11 @@ export default function Title() {
         } else if (val === 'login'){
             Axios.post('/user/login', userInfo)
             .then(function (response) {
-                // changeToken(response.data.token);
-                // changeUserId(response.data.user._id);
+                console.log("DATA:", response);
                 changeAuthenticated(response.data.token, response.data.user._id);
             })
             .catch(function (error) {
-                console.log(error);
+                console.log("ERROR:", error);
                 setLoginError('We found no user with those credentials.')
             });
         }
