@@ -17,6 +17,12 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/thingsgame", {
     useFindAndModify: false
 });
 
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static("client/build"));
+} else {
+    app.use(express.static("client/public"));
+}
+
 app.use('/', routes);
 
 // Error handling
@@ -29,15 +35,9 @@ app.use(function(err, req, res, next) {
     }
 });
 
-if (process.env.NODE_ENV === "production") {
-    app.use(express.static("client/build"));
-  } else {
-    app.use(express.static("client/public"));
-  }
+// const Game = require('./models/game');
 
-const Game = require('./models/game');
-
-Game.deleteMany({}, (err, res) => {});
+// Game.deleteMany({}, (err, res) => {});
 
 const server = app.listen(PORT, () => {
     console.log(`🌎  ==> Server now listening on PORT ${PORT}!`);
