@@ -33,7 +33,8 @@ router.route("/:id").get((req, res) => {
     .catch(err => res.status(400).send(err));
 });
 
-router.route('/:id').put(isAuthenticated, (req,res)=>{
+//put isAuthenticated back
+router.route('/:id').put((req,res)=>{
   const {id, wins, avatar} = req.body;
   db.User.findOneAndUpdate({id}, {wins, avatar})
   .then(data => res.json(data))
