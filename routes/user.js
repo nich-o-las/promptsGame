@@ -19,7 +19,9 @@ router.route("/signup").post((req, res) => {
 
 // Any route with isAuthenticated is protected and you need a valid token
 // to access
-router.route("/:id").get(isAuthenticated, (req, res) => {
+// put isAuthenticated back in as middleware once you figure it out
+
+router.route("/:id").get((req, res) => {
   db.User.findById(req.params.id)
     .then(data => {
       if (data) {
