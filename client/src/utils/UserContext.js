@@ -47,6 +47,7 @@ export default function UserProvider(props) {
 
   //gets the user info from the db. This is called as soon as the user is authenticated.
   const getUser = (token, id) => {
+    console.log("GET USER START:", token, id);
     Axios.get(`/user/${id}`, {
       headers: {
         'Content-type': 'application/json',
@@ -54,7 +55,7 @@ export default function UserProvider(props) {
       }
     })
     .then(result => {
-      console.log("GET USER: ", result);
+      console.log("GET USER COMPLETE: ", result);
       const {wins, userName, avatar} = result.data;
       setUserName(userName);
       setUserWins(wins);
