@@ -29,9 +29,13 @@ export default function UserProvider(props) {
       // i'm setting the userId in it's own setter bc then I can save it in localStorage
       console.log(userId);
       changeUserId(userId);
+      console.log("AUTH");
       setIsAuthenticated(true);
+      console.log("token:", token);
       setToken(token);
+      console.log("user:", token, userId);
       getUser(token, userId);
+      console.log("done");
     }
   };
 
