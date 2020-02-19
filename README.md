@@ -31,4 +31,3 @@ AUTHORS:
 * Tony Sarni (https://github.com/Vitalian17)
 * Nick Cox (https://github.com/nich-o-las)
 
-
