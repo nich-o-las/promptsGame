@@ -219,7 +219,7 @@ export default function Title() {
             <div className="localGameBtn">
                 <button id="onlineLoginModal" onClick={()=>showLoginModal()}>Play Online</button>
                 <span className="submitOr">or</span>
-                <link id="offlineGameInit" to="/offlinegame">Play Offline</link>
+                <button id="offlineGameInit" onClick={()=><Redirect to="/offlinegame"/>}>Play Offline</button>
                 {/* <a id="avatarCustomization" href="/avatar">Customize Avatar</a> */}
             </div>
             {redirect && <Redirect to="/onlineGame" />}
