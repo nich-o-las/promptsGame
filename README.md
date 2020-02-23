@@ -3,6 +3,8 @@
 A full stack multiplayer party app where users can submit and match responses to a prompt. 
 Deployed App: https://game-of-prompts.herokuapp.com/
 
+![](./promptsGame.gif)
+
 To run this application, you need to create a .env file. 
 Inside this .env file, create a ```SERVER_SECRET``` variable, and set it to any string.
 Next, run ```npm install``` in the route directory. 
