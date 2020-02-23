@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import {Link, Redirect} from "react-router-dom";
 import "./style.css";
 import GameHeader from "../../components/GameHeader";
 import SelectedAvatar from "../../components/SelectedAvatar";
@@ -189,8 +190,8 @@ export default function OfflineGame() {
                 <div className="scoreBoard">
                     <h1>The game is over!</h1>
                     {scoreboard()}
-                    <a href="/offlineGame">New Game</a>
-                    <a href="/">Main Menu</a>
+                    <Link to="/offlineGame">New Game</Link>
+                    <Link to="/">Main Menu</Link>
                 </div>
             )
         }
